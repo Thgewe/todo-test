@@ -1,9 +1,14 @@
 import './App.less';
+import Layout from "./components/Layout/Layout";
+import Main from "./pages/Main/Main";
 
 function App() {
+
   return (
     <div className="App">
-      <div className="inner"></div>
+      <Layout>
+        <Main />
+      </Layout>
     </div>
   );
 }

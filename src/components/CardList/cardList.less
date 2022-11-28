@@ -1,0 +1,34 @@
+.cardList {
+  border: 1px solid var(--hex-primary);
+  border-radius: 0.25rem;
+  padding: 1rem;
+  width: 400px;
+  height: fit-content;
+  background-color: rgba(var(--rgb-primary), 0.1);
+
+  &__headline {
+    color: var(--hex-primary);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  &__add {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #ffffff;
+    outline: none;
+    border: 1px solid var(--hex-primary);
+    border-radius: 0.2rem;
+    color: var(--hex-primary);
+    cursor: pointer;
+    transition: 0.3s all;
+    &:disabled {
+      border-color: #cacaca;
+      color: #cacaca;
+      pointer-events: none;
+    }
+    &:hover {
+      background-color: #e3e3e3;
+    }
+  }
+}

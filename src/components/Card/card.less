@@ -1,0 +1,153 @@
+@defaultMarginBetweenTags: 0.5rem;
+
+.card {
+  display: flex;
+  border: 1px solid teal;
+  flex-direction: column;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(var(--rgb-primary), 0.1);
+  width: 100%;
+  &--dev {
+    background-color: rgba(var(--rgb-development), 0.3);
+  }
+  &--done {
+    background-color: rgba(var(--rgb-done), 0.2);
+  }
+  &.card--editing {
+    .card__edit {
+      background-image: url("../../images/icons/svg/checkmark.svg");
+    }
+    .card__delete {
+      background-image: url("../../images/icons/svg/cross.svg");
+      background-size: 85%;
+      background-position: center;
+      & input {
+        display: none;
+        pointer-events: none;
+      }
+    }
+  }
+
+  & > &__label {
+    margin-bottom: @defaultMarginBetweenTags;
+  }
+
+  &__name, &__descr, &__time {
+    outline: none;
+    border: 1px solid var(--hex-primary);
+    border-radius: 0.25rem;
+    font-family: var(--font-main);
+    padding: 0.25rem;
+    & + label {
+      margin-top: @defaultMarginBetweenTags;
+    }
+    &:disabled {
+      color: inherit;
+      border-color: transparent;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+  &__name {
+    font-size: 1.25rem;
+    background-color: white;
+  }
+  &__descr {
+    font-size: 1rem;
+    height: 5rem;
+    resize: vertical;
+  }
+  &__deadline, &__done {
+    margin-top: @defaultMarginBetweenTags;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    & .card__label {
+      margin-right: 0.1rem;
+    }
+  }
+  &__done {
+    align-items: center;
+    & > span {
+      font-weight: bold;
+      font-size: 0.95rem;
+      color: var(--hex-error);
+      display: none;
+    }
+    &--expired {
+      & > span {
+        display: inline;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    margin-top: @defaultMarginBetweenTags;
+    align-items: center;
+    width: 100%;
+    & > div + div {
+      margin-left: 0.5rem;
+    }
+  }
+  &__select {
+    padding: 0.2rem;
+    outline: none;
+    margin-right: auto;
+    border: 1px solid var(--hex-primary);
+  }
+  &__delete, &__edit {
+    cursor: pointer;
+    transition: 0.3s all;
+    border-radius: 0.2rem;
+    border: 1px solid transparent;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+  }
+  &__delete {
+    background-size: contain;
+    background-image: url("../../images/icons/svg/trashcan_delete.svg");
+    &:hover {
+      border-color: var(--hex-error);
+    }
+    position: relative;
+    & input {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      user-select: none;
+    }
+    & input:checked + div {
+      display: flex;
+    }
+  }
+  &__popup {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none;
+    align-items: center;
+
+    & > div {
+      padding: 0.2rem 0.3rem;
+      color: #ffffff;
+      font-weight: bold;
+    }
+    & div:first-child {
+      background-color: var(--hex-done);
+    }
+    & div:last-child {
+      background-color: var(--hex-error);
+    }
+  }
+  &__edit {
+    background-size: 90%;
+    background-position: center;
+    background-image: url("../../images/icons/svg/edit.svg");
+    &:hover {
+      border-color: var(--hex-primary);
+    }
+  }
+}

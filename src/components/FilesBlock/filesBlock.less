@@ -1,0 +1,68 @@
+.files {
+  margin-top: 0.5rem;
+
+  &__input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__fake {
+    display: block;
+    border: 1px solid var(--hex-primary);
+    border-radius: 0.2rem;
+    width: 2rem;
+    height: 2rem;
+    background:
+            #ffffff
+            url("../../images/icons/svg/clip.svg")
+            center
+            no-repeat;
+    background-size: 80%;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    margin-bottom: 0.2rem;
+    & > input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      user-focus: none;
+    }
+  }
+  &__storage {
+    height: 2rem;
+    padding-right: 8px;
+    overflow-y: scroll;
+    resize: vertical;
+  }
+  &__file {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.2);
+    & + & {
+      margin-top: 0.2rem;
+      padding-top: 0.2rem;
+      border-top: 1px dotted var(--hex-primary);
+    }
+  }
+  &__download {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--hex-primary);
+    cursor: pointer;
+    padding-left: 0.3rem;
+  }
+  &__delete {
+    width: 20px;
+    height: 20px;
+    background:
+            transparent
+            url("../../images/icons/svg/trashcan_delete.svg")
+            center
+            no-repeat;
+    background-size: 95%;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+}

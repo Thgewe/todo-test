@@ -1,0 +1,22 @@
+:root {
+
+    --max-width: 1200px;
+
+    /* colors */
+
+    --hex-primary: #21759B;
+    --rgb-primary: 33, 117, 155;
+    --hex-error: #CD201F;
+    --hex-development: #F57D00;
+    --rgb-development: 245, 125, 0;
+    --hex-done: #25D366;
+    --rgb-done: 37, 211, 102;
+
+    /* paddings & margins */
+
+    --padding-page-horizontal: 1rem;
+
+    /* fonts */
+
+    --font-main: 'Roboto', sans-serif;
+}
